@@ -31,7 +31,7 @@ const Pokehead = (props) => {
 
       <nav>
         <div class="nav-wrapper red darken-2">
-          <span class="brand-logo">POKEDEX</span>
+          <span class="brand-logo"><img src="../img/Pokémon_logo.svg" alt=""/></span>
           <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
         </div>
       </nav>

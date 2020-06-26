@@ -1,13 +1,12 @@
 export default class Pokedata {
-  constructor() {
-    this.url = `https://pokeapi.co/api/v2/pokemon?limit=${151}`;
+  constructor(range) {
+    this.url = `https://pokeapi.co/api/v2/pokemon?limit=${range}`;
     this.pokemons = [];
   }
 
   async getPokedata() {
     const res = await fetch(this.url);
     const data = await res.json();
-
     return data.results;
   }
 
@@ -16,7 +15,7 @@ export default class Pokedata {
     const data = await res.json();
     console.log(data);
     const { name, types, stats, sprites, weight, height} = data;
-    const pokemon = new Pokemon(name, types, index, stats, sprites, weight, height,);
+    const pokemon = new Pokemon(name, types, index, stats, sprites, weight, height);
 
     return pokemon;
   }
