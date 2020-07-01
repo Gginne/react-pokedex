@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 
 header .card-panel .card-content img{
     margin: .1rem!important;
+=======
+header{
+    background-image: url("./img/pokemon_wallpaper.png") center/cover center;
+    margin: 0!important;
+}
+
+header .card-panel .card-content img{
+    margin: .1rem!important;
+>>>>>>> 702f9290b778323ff65aa71b7363622d70d9c62f
 }

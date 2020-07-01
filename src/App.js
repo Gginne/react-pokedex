@@ -2,9 +2,15 @@ import React from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import Pokecard from "./components/Pokecard";
 import Pokehead from "./components/Pokehead";
+<<<<<<< HEAD
 import Pokemodal from "./components/Pokemodal"
 import Pokedata from "./API/Pokedata";
 
+=======
+import Pokedata from "./API/Pokedata";
+
+
+>>>>>>> 702f9290b778323ff65aa71b7363622d70d9c62f
 class App extends React.Component {
   constructor() {
     super();
@@ -27,7 +33,11 @@ class App extends React.Component {
           this.setState((prevState) => ({
             pokemons: [...prevState.pokemons, newPokemon].sort(
               (a, b) => a.index - b.index
+<<<<<<< HEAD
             ),
+=======
+            )
+>>>>>>> 702f9290b778323ff65aa71b7363622d70d9c62f
           }));
         });
       });
@@ -35,8 +45,13 @@ class App extends React.Component {
   }
 
   setCurrent(idx) {
+<<<<<<< HEAD
     let pokemon = this.state.pokemons[idx - 1];
     this.setState({ current: pokemon });
+=======
+    let pokemon = this.state.pokemons[idx-1]
+    this.setState({ current: pokemon});
+>>>>>>> 702f9290b778323ff65aa71b7363622d70d9c62f
   }
 
   setFilter(e) {
@@ -54,6 +69,10 @@ class App extends React.Component {
         {/*<Pokehead pokemon={this.state.current}/>*/}
         <div className="container">
           <div className="row" style={{ margin: "2rem auto" }}>
+<<<<<<< HEAD
+=======
+            <img src="./img/Pokémon_logo.svg" alt=""/>
+>>>>>>> 702f9290b778323ff65aa71b7363622d70d9c62f
             <input
               type="text"
               placeholder="Search Pokemon"
@@ -62,8 +81,11 @@ class App extends React.Component {
           </div>
         </div>
 
+<<<<<<< HEAD
         <Pokemodal pokemon={this.state.current}/>
 
+=======
+>>>>>>> 702f9290b778323ff65aa71b7363622d70d9c62f
         <div className="row">
           {pokemons.map((pokemon) => (
             <Pokecard
