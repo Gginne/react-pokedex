@@ -1,4 +1,17 @@
+body{
+    background: lightgrey;
+}
 
-header .card-panel .card-content img{
-    margin: .1rem!important;
+.poke-card{
+    border-radius: 0!important;
+}
+
+.poke-card img{
+    width: 100px
+}
+
+.card-img-top{
+    width: 100%!important;
+    border-radius: 0!important;
+    background-color: lightblue;
 }

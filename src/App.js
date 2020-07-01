@@ -1,5 +1,5 @@
 import React from "react";
-import "materialize-css/dist/css/materialize.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import Pokecard from "./components/Pokecard";
 import Pokemodal from "./components/Pokemodal"
 import Pokedata from "./API/Pokedata";
@@ -50,17 +50,16 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        {/*<Pokehead pokemon={this.state.current}/>*/}
         <div className="container">
           <div className="row" style={{ margin: "2rem auto" }}>
-            <input
+          <input
               type="text"
               placeholder="Search Pokemon"
               onChange={(e) => this.setFilter(e)}
             />
           </div>
         </div>
-
+       
         <Pokemodal pokemon={this.state.current}/>
 
         <div className="row">

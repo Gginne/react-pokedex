@@ -2,13 +2,17 @@ import React from 'react'
 
 const Pokecard = (props) => {
     return (
-    <div className="col s12 m4 l2 modal-trigger" data-target="modal1">
-        <div className="card" style={{"cursor": "pointer"}} onClick={() => props.onClick(props.pokemon.index)}>
-            <div className="card-content">
-            <span className="card-title">{props.pokemon.indexToString()} {props.pokemon.name}</span>
-            <img alt="front" src={props.pokemon.sprites.front_default}></img>
+    
+    <div className="col-sm-12 col-md-4 col-lg-2 ">
+      <div class="card poke-card m-2 py-1 text-center">
+      <h4 class="card-title">{props.pokemon.indexToString()} {props.pokemon.name}</h4>
+        <div class="card-img-top mx-auto p-3">
+            <img src={props.pokemon.sprites.front_default} alt={props.pokemon.name + " sprite"}/>
+        </div>
+        
+        <div class="card-body">
             <p>{props.pokemon.types}</p>
-            </div>
+        </div>
         </div>
         
     </div>
