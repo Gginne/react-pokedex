@@ -1,29 +1,8 @@
 import React from "react";
-import M from "materialize-css";
 
 export default class Modal extends React.Component {
     componentDidMount() {
-        const options = {
-            onOpenStart: () => {
-                console.log("Open Start");
-            },
-            onOpenEnd: () => {
-                console.log("Open End");
-            },
-            onCloseStart: () => {
-                console.log("Close Start");
-            },
-            onCloseEnd: () => {
-                console.log("Close End");
-            },
-            inDuration: 250,
-            outDuration: 250,
-            opacity: 0.5,
-            dismissible: true,
-            startingTop: "-10%",
-            endingTop: "10px",
-        };
-        M.Modal.init(this.Modal, options);
+        
     }
 
     render() {

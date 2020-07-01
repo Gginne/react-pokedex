@@ -13,5 +13,5 @@ body{
 .card-img-top{
     width: 100%!important;
     border-radius: 0!important;
-    background-color: lightblue;
+    background-color: rgb(225, 239, 243);
 }

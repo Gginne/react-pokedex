@@ -50,14 +50,15 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <div className="container">
+        
           <div className="row" style={{ margin: "2rem auto" }}>
           <input
               type="text"
               placeholder="Search Pokemon"
               onChange={(e) => this.setFilter(e)}
+              class="mx-auto w-50 p-2"
             />
-          </div>
+    
         </div>
        
         <Pokemodal pokemon={this.state.current}/>
