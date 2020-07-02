@@ -3,7 +3,7 @@ body{
 }
 
 .poke-card{
-    border-radius: 0!important;
+    border-radius: 35px!important;
 }
 
 .poke-card img{
@@ -13,5 +13,14 @@ body{
 .card-img-top{
     width: 100%!important;
     border-radius: 0!important;
-    background-color: rgb(225, 239, 243);
+    /*background-color: rgb(253, 235, 235);*/
+    background-color: #f6fce3;
+}
+
+.filter-input{
+    border-radius: 50px!important;
+}
+
+.filter-input:focus{
+    outline: none;
 }

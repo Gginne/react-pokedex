@@ -1,23 +1,18 @@
 import React from "react";
+import Modal from 'react-bootstrap/Button'
 
-export default class Modal extends React.Component {
-    componentDidMount() {
-        
+export default class Pokemodal extends React.Component {
+    constructor(props) {
+        super(props);
     }
-
+    componentDidMount() {
+      
+    }
     render() {
-    return (
-        <div ref={(Modal) => {this.Modal = Modal;}} id="modal1" className="modal">
-            <div className="modal-content">
-            <h4>{this.props.pokemon && this.props.pokemon.name}</h4>
-            <p>A bunch of text</p>
+        return (
+            <div>
+               
             </div>
-            <div class="modal-footer">
-            <button class="modal-close waves-effect waves-red btn-flat">
-                Exit
-            </button>
-            </div>
-        </div>
-    );
-  }
+        );
+    }
 }

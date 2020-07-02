@@ -56,7 +56,7 @@ class App extends React.Component {
               type="text"
               placeholder="Search Pokemon"
               onChange={(e) => this.setFilter(e)}
-              class="mx-auto w-50 p-2"
+              class="filter-input border mx-auto w-50 p-2 px-2"
             />
     
         </div>
