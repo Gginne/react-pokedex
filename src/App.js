@@ -16,24 +16,21 @@ class App extends React.Component {
     this.setFilter = this.setFilter.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const data = new Pokedata(151);
-    data.getPokedata().then((pokemons) => {
-      pokemons.forEach((pokemon, idx) => {
-        let index = idx + 1;
+    const pokemonURLs = await data.getPokedata()
+    pokemonURLs.forEach(async (pokemon, index) => {
+      console.log(pokemon)
         let url = pokemon.url;
-        data.setPokemon(url, index).then((newPokemon) => {
-          this.setState((prevState) => ({
-            pokemons: [...prevState.pokemons, newPokemon].sort(
-              (a, b) => a.index - b.index
-            ),
-          }));
-        });
-      });
-    });
+        const newPokemon = await data.setPokemon(url, index+1)
+        this.setState(prevState => {
+          return {pokemons: [...prevState.pokemons, newPokemon].sort((a,b) => a.index-b.index)}
+        })
+    })
   }
 
   setCurrent(idx) {
+    console.log(idx)
     let pokemon = this.state.pokemons[idx - 1];
     this.setState({ current: pokemon });
   }
@@ -43,7 +40,7 @@ class App extends React.Component {
   }
 
   render() {
-    const filter = this.state.filter;
+    const {filter} = this.state
     const pokemons = filter
       ? this.state.pokemons.filter((pokemon) => pokemon.name.includes(filter))
       : this.state.pokemons;
@@ -51,12 +48,12 @@ class App extends React.Component {
     return (
       <div className="App">
         
-          <div className="row" style={{ margin: "2rem auto" }}>
+          <div className="row mt-4 mb-5 mx-auto">
           <input
               type="text"
               placeholder="Search Pokemon"
               onChange={(e) => this.setFilter(e)}
-              class="filter-input border mx-auto w-50 p-2 px-2"
+              class="filter-input border mx-auto w-50 p-2 px-3"
             />
     
         </div>
@@ -68,7 +65,8 @@ class App extends React.Component {
             <Pokecard
               pokemon={pokemon}
               key={pokemon.index}
-              onClick={(idx) => this.setCurrent(idx)}
+              index={pokemon.index}
+              current={this.setCurrent}
             />
           ))}
         </div>

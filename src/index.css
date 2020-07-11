@@ -4,6 +4,7 @@ body{
 
 .poke-card{
     border-radius: 35px!important;
+    cursor: pointer;
 }
 
 .poke-card img{
@@ -14,7 +15,7 @@ body{
     width: 100%!important;
     border-radius: 0!important;
     /*background-color: rgb(253, 235, 235);*/
-    background-color: #f6fce3;
+    background-color: #e5d1ff;
 }
 
 .filter-input{
