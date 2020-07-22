@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Pokelist from "./components/Pokelist"
 import Pokemodal from "./components/Pokemodal"
-import Pokedata from "./API/Pokedata";
 
 class App extends React.Component {
   constructor() {
@@ -28,17 +27,15 @@ class App extends React.Component {
 
     return (
       <div className="App">
-          <div className="row mt-4 mb-5 mx-auto">
-          <input
-              type="text"
-              placeholder="Search Pokemon"
-              onChange={(e) => this.setFilter(e)}
-              class="filter-input border mx-auto w-50 p-2 px-3"
-            />
-    
+        
+        <div className="row mt-4 mb-5 mx-auto">
+          <input type="text" placeholder="Search Pokemon"
+            onChange={(e) => this.setFilter(e)}
+            className="filter-input border mx-auto w-50 p-2 px-3"
+          />
         </div>
-       
-        <Pokemodal pokemon={this.state.current}/>
+
+        { this.state.current ? <Pokemodal pokemon={this.state.current} changeCurrent={this.setCurrent} /> : ""}
         <Pokelist filter={this.state.filter} changeCurrent={this.setCurrent}/>
       </div>
     );
